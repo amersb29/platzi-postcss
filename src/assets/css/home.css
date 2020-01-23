@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+:root 
+{
+    --mainColor: #f00;
+    --backgroundColor: #fff;
+    --warningColor: #f90;
+    --button: {
+        background-color: white;
+        border: 1px solid var(--mainColor);
+        border-radius: 10px;
+        color: var(--mainColor);
+        cursor: pointer;
+        margin: 10px 0;
+        padding: .5em 2em;
+        text-transform: uppercase;
+    };
+    --viewportHeight: 40vh ;
+}
+
+a
+{
+    color: #000;
+    text-decoration: none;
+}
+
+body 
+{
+    font-family: 'Bangers', cursive;
+    margin: 0;
+}
+
+.btn
+{
+    @apply --button;
+}
+
+.btn.warning
+{
+    color: var(--warningColor);
+    border-color: var(--warningColor);
+}
+
+.container
+{
+    display: flex;
+    height: calc(var(--viewportHeight) * 2);
+    margin: 20px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits
+{
+    display: flex;
+    font-size: .8em;
+    justify-content: center;
+    align-items: center;
+}
+
+figure
+{  
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    width: calc(100% - 70%);
+}
+figure img
+{
+    margin: 0 10px;
+    width: calc(100% - 80%);
+}
