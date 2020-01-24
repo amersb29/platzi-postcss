@@ -1,4 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+@font-face {
+    font-family: Bangers;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Bangers Regular"),local(Bangers-Regular),url(//fonts.gstatic.com/s/bangers/v12/FeVQS0BTqb0h60ACH5BQ3A.eot?#) format("eot"),url(//fonts.gstatic.com/s/bangers/v12/FeVQS0BTqb0h60ACH55Q2A.woff2) format("woff2"),url(//fonts.gstatic.com/s/bangers/v12/FeVQS0BTqb0h60ACH5BQ3g.woff) format("woff");
+}
+/* @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap'); */
+body {
+    font-family: 'Bangers', cursive;
+    margin: 0;
+}
+@media screen and (max-width: 767px) {
+    body {
+        border: 10px solid var(--warningColor);
+    }
+}
+@media screen and (min-width: 768px) {
+    body {
+        border: 10px solid #639;
+    }
+}
+@media screen and (min-width: 1024px) {
+    body {
+        border: 10px solid greenyellow;
+    }
+}
 :root 
 {
     --mainColor: #f00;
@@ -6,19 +31,30 @@
     --warningColor: #f90;
     --viewportHeight: 40vh ;
 }
-
 a
 {
     color: #000;
     text-decoration: none;
 }
-
-body 
+nav ul
 {
-    font-family: 'Bangers', cursive;
-    margin: 0;
+    list-style: none;
 }
-
+nav ul :link,nav ul :visited
+{
+    display: inline-block;
+    margin: 0 15px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 60px;
+}
+nav ul :link:hover,nav ul :visited:hover
+{
+    border-bottom: 3px solid var(--warningColor);
+    color: var(--warningColor);
+    padding-bottom: 5px;
+    
+}
 .btn
 {
   background-color: white;
@@ -30,13 +66,11 @@ body
   padding: .5em 2em;
   text-transform: uppercase;
 }
-
 .btn.warning
 {
     color: var(--warningColor);
     border-color: var(--warningColor);
 }
-
 .container
 {
     display: flex;
@@ -46,7 +80,6 @@ body
     justify-content: center;
     align-items: center;
 }
-
 .credits
 {
     display: flex;
@@ -54,16 +87,29 @@ body
     justify-content: center;
     align-items: center;
 }
-
 figure
-{  
+{
     justify-content: center;
     display: flex;
     margin: 0 auto;
-    width: calc(100% - 70%);
+    width: calc(100% - 70%)
 }
-figure img
-{
+figure img {
     margin: 0 10px;
     width: calc(100% - 80%);
 }
+figure img:last-child, figure img:nth-of-type(2) {
+    border: 4px dotted var(--mainColor);
+    border-radius: 50%;
+}
+figure img:not(:last-child):not(:nth-of-type(2)):not(:first-child) {
+    border: 4px solid #639;
+    border-radius: 50%;
+}
+.container figure {
+    border: 1px dashed blue;
+    padding: 20px;
+}
+/* @custom-media --small screen and (max-width: 768px); */
+
+

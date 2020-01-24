@@ -1,0 +1,13 @@
+body {
+    font-family: 'Bangers', cursive;
+    margin: 0;
+    @media (--small) {
+        border: 10px solid var(--warningColor);
+    }
+    @media (--medium) {
+        border: 10px solid #639;
+    }
+    @media (--large) {
+        border: 10px solid greenyellow;
+    }
+}

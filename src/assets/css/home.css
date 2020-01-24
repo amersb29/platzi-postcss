@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap'); */
+@import './body.css';
+
 :root 
 {
     --mainColor: #f00;
@@ -23,13 +25,32 @@ a
     text-decoration: none;
 }
 
-body 
+nav ul
 {
-    font-family: 'Bangers', cursive;
-    margin: 0;
+    list-style: none;
 }
 
-.btn
+nav ul :any-link
+{
+    display: inline-block;
+    margin: 0 15px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 60px;
+}
+
+nav ul :any-link:hover
+{
+    border-bottom: 3px solid var(--warningColor);
+    color: var(--warningColor);
+    padding-bottom: 5px;
+    
+}
+
+
+@custom-selector :--buttons .btn;
+
+:--buttons
 {
     @apply --button;
 }
@@ -59,14 +80,38 @@ body
 }
 
 figure
-{  
+{
     justify-content: center;
     display: flex;
     margin: 0 auto;
     width: calc(100% - 70%);
+
+    & img {
+        margin: 0 10px;
+        width: calc(100% - 80%);
+
+        &:matches(:last-child, :nth-of-type(2) ) {
+            border: 4px dotted var(--mainColor);
+            border-radius: 50%;
+        }
+
+        &:not(:last-child, :nth-of-type(2), :first-child ) {
+            border: 4px solid #639;
+            border-radius: 50%;
+        }
+    }
+
+    @nest .container & {
+        border: 1px dashed blue;
+        padding: 20px;
+    }
 }
-figure img
-{
-    margin: 0 10px;
-    width: calc(100% - 80%);
-}
+
+
+/* @custom-media --small screen and (max-width: 768px); */
+@custom-media --xsmall screen and (width <= 420px);
+@custom-media --small screen and (width < 768px);
+@custom-media --medium screen and (width >= 768px);
+@custom-media --large screen and (width >= 1024px);
+
+
